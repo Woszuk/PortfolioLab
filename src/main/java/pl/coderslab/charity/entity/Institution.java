@@ -6,20 +6,21 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Category {
+public class Institution {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private String description;
 
-    public Category() {
+    public Institution() {
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public Category setId(long id) {
+    public Institution setId(Long id) {
         this.id = id;
         return this;
     }
@@ -28,8 +29,17 @@ public class Category {
         return name;
     }
 
-    public Category setName(String name) {
+    public Institution setName(String name) {
         this.name = name;
+        return this;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Institution setDescription(String description) {
+        this.description = description;
         return this;
     }
 }
