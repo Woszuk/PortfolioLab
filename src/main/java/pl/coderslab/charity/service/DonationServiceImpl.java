@@ -25,4 +25,11 @@ public class DonationServiceImpl implements DonationService {
 
         return sum;
     }
+
+    @Override
+    public int allDonation() {
+        List<Donation> donations = donationRepository.findAll();
+        int sum = donations.size();
+        return sum;
+    }
 }
