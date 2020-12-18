@@ -34,7 +34,12 @@ public class Category {
         return this;
     }
 
-    public Category(List<Donation> donations) {
+    public List<Donation> getDonations() {
+        return donations;
+    }
+
+    public Category setDonations(List<Donation> donations) {
         this.donations = donations;
+        return this;
     }
 }
