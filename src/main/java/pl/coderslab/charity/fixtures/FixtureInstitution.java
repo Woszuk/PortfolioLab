@@ -1,13 +1,16 @@
 package pl.coderslab.charity.fixtures;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import pl.coderslab.charity.entity.Institution;
 import pl.coderslab.charity.repository.InstitutionRepository;
 
 @Component
 public class FixtureInstitution {
+    @Autowired
+    private InstitutionRepository institutionRepository;
 
-    public void addInstitutionToDatabases(InstitutionRepository institutionRepository){
+    public void addInstitutionToDatabases(){
         Institution institution = new Institution()
                 .setDescription("Pomoc dzieciom z ubogich rodzin")
                 .setName("Dbam o Zdrowie");
