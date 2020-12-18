@@ -1,9 +1,8 @@
 package pl.coderslab.charity.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Category {
@@ -11,15 +10,17 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    @ManyToMany(mappedBy = "categoryList")
+    private List<Donation> donations = new ArrayList<>();
 
     public Category() {
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public Category setId(long id) {
+    public Category setId(Long id) {
         this.id = id;
         return this;
     }
@@ -30,6 +31,15 @@ public class Category {
 
     public Category setName(String name) {
         this.name = name;
+        return this;
+    }
+
+    public List<Donation> getDonations() {
+        return donations;
+    }
+
+    public Category setDonations(List<Donation> donations) {
+        this.donations = donations;
         return this;
     }
 }
