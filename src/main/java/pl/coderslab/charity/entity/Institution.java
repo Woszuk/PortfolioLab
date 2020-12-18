@@ -1,9 +1,8 @@
 package pl.coderslab.charity.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Institution {
@@ -12,6 +11,8 @@ public class Institution {
     private Long id;
     private String name;
     private String description;
+    @OneToMany(mappedBy = "institution")
+    private List<Donation> donationList = new ArrayList<>();
 
     public Institution() {
     }
@@ -40,6 +41,15 @@ public class Institution {
 
     public Institution setDescription(String description) {
         this.description = description;
+        return this;
+    }
+
+    public List<Donation> getDonationList() {
+        return donationList;
+    }
+
+    public Institution setDonationList(List<Donation> donationList) {
+        this.donationList = donationList;
         return this;
     }
 }
