@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-<header th:insert="fragments/header :: header"></header>
+<header>
+    <nav th:replace="fragments/nav :: nav"></nav>
+</header>
 
 <section class="login-page">
     <h2>Zaloguj się</h2>
