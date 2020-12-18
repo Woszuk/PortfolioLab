@@ -7,8 +7,11 @@ import pl.coderslab.charity.repository.InstitutionRepository;
 
 @Component
 public class FixtureInstitution {
-    @Autowired
     private InstitutionRepository institutionRepository;
+
+    public FixtureInstitution(InstitutionRepository institutionRepository) {
+        this.institutionRepository = institutionRepository;
+    }
 
     public void addInstitutionToDatabases(){
         Institution institution = new Institution()

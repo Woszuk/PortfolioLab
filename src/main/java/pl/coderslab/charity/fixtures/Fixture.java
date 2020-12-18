@@ -8,11 +8,17 @@ import pl.coderslab.charity.repository.InstitutionRepository;
 
 @Component
 public class Fixture {
-    @Autowired
     private FixtureInstitution fixtureInstitution;
+    private FixtureCategory fixtureCategory;
+
+    public Fixture(FixtureInstitution fixtureInstitution, FixtureCategory fixtureCategory) {
+        this.fixtureInstitution = fixtureInstitution;
+        this.fixtureCategory = fixtureCategory;
+    }
 
     @EventListener(ApplicationReadyEvent.class)
     public void databases(){
         fixtureInstitution.addInstitutionToDatabases();
+        fixtureCategory.addCategoryToDatabases();
     }
 }
