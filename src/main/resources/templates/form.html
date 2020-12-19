@@ -81,7 +81,7 @@
     <div class="form--steps-container">
         <div class="form--steps-counter">Krok <span>1</span>/4</div>
 
-        <form action="form-confirmation.html" method="post">
+        <form th:object="${donation}" method="post" >
             <!-- STEP 1: class .active is switching steps -->
             <div data-step="1" class="active">
                 <h3>Zaznacz co chcesz oddać:</h3>
@@ -106,7 +106,7 @@
                 <div class="form-group form-group--inline">
                     <label>
                         Liczba 60l worków:
-                        <input type="number" name="bags" step="1" min="1"/>
+                        <input th:field="*{quantity}" type="number" name="bags" step="1" min="1"/>
                     </label>
                 </div>
 
@@ -121,13 +121,13 @@
             <div data-step="3">
                 <h3>Wybierz organizacje, której chcesz pomóc:</h3>
 
-                <div th:each="institution : ${institutions}" class="form-group form-group--checkbox">
+                <div th:each="inst : ${institutions}" class="form-group form-group--checkbox">
                     <label>
-                        <input type="radio" name="organization" value="old"/>
+                        <input th:field="*{institution}" type="radio" name="organization" th:value="${inst.id}"/>
                         <span class="checkbox radio"></span>
                         <span class="description">
-                            <div class="title" th:text='|Fundacja “${institution.name}“|'></div>
-                            <div class="subtitle" th:text="|Cel i misja: ${institution.description}.|"></div>
+                            <div class="title" th:text='|Fundacja “${inst.name}“|'></div>
+                            <div class="subtitle" th:text="|Cel i misja: ${inst.description}.|"></div>
                         </span>
                     </label>
                 </div>
