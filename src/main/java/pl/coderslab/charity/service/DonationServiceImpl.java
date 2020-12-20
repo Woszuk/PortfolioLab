@@ -32,4 +32,9 @@ public class DonationServiceImpl implements DonationService {
         int sum = donations.size();
         return sum;
     }
+
+    @Override
+    public void save(Donation donation) {
+        donationRepository.save(donation);
+    }
 }
