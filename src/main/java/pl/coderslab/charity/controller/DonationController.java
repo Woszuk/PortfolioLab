@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import pl.coderslab.charity.entity.Donation;
 import pl.coderslab.charity.service.CategoryServiceImpl;
+import pl.coderslab.charity.service.DonationServiceImpl;
 import pl.coderslab.charity.service.InstitutionServiceImpl;
 
 import javax.validation.Valid;
@@ -16,10 +17,12 @@ import javax.validation.Valid;
 public class DonationController {
     private InstitutionServiceImpl institutionService;
     private CategoryServiceImpl categoryService;
+    private DonationServiceImpl donationService;
 
-    public DonationController(InstitutionServiceImpl institutionService, CategoryServiceImpl categoryService) {
+    public DonationController(InstitutionServiceImpl institutionService, CategoryServiceImpl categoryService, DonationServiceImpl donationService) {
         this.institutionService = institutionService;
         this.categoryService = categoryService;
+        this.donationService = donationService;
     }
 
     @GetMapping("/form")
@@ -35,6 +38,7 @@ public class DonationController {
         if(result.hasErrors()){
             return "form";
         }
+        donationService.save(donation);
         return "form-confirmation";
     }
 }

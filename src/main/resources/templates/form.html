@@ -146,22 +146,22 @@
                     <div class="form-section--column">
                         <h4>Adres odbioru</h4>
                         <div class="form-group form-group--inline">
-                            <label> Ulica <input th:field="*{street}" type="text" name="address"/> </label>
+                            <label> Ulica <input th:field="*{street}" type="text"/> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
-                            <label> Miasto <input th:field="*{city}" type="text" name="city"/> </label>
+                            <label> Miasto <input th:field="*{city}" type="text" /> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
-                                Kod pocztowy <input th:field="*{zipCode}" type="text" name="postcode"/>
+                                Kod pocztowy <input th:field="*{zipCode}" type="text" />
                             </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
-                                Numer telefonu <input type="phone" name="phone"/>
+                                Numer telefonu <input th:field="*{phoneNumber}" type="text" />
                             </label>
                         </div>
                     </div>
@@ -169,17 +169,17 @@
                     <div class="form-section--column">
                         <h4>Termin odbioru</h4>
                         <div class="form-group form-group--inline">
-                            <label> Data <input th:field="*{pickUpDate}" type="date" name="data"/> </label>
+                            <label> Data <input th:field="*{pickUpDate}" type="date" /> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
-                            <label> Godzina <input th:field="*{pickUpTime}" type="time" name="time"/> </label>
+                            <label> Godzina <input th:field="*{pickUpTime}" type="time" /> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label>
                                 Uwagi dla kuriera
-                                <textarea th:field="*{pickUpComment}" name="more_info" rows="5"></textarea>
+                                <textarea th:field="*{pickUpComment}" rows="5"></textarea>
                             </label>
                         </div>
                     </div>
@@ -205,9 +205,7 @@
 
                             <li>
                                 <span class="icon icon-hand"></span>
-                                <span class="summary--text"
-                                >Dla fundacji "Mam marzenie" w Warszawie</span
-                                >
+                                <span class="summary--text"></span>
                             </li>
                         </ul>
                     </div>
@@ -226,9 +224,9 @@
                         <div class="form-section--column">
                             <h4>Termin odbioru:</h4>
                             <ul>
-                                <li>13/12/2018</li>
-                                <li>15:40</li>
-                                <li>Brak uwag</li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
                             </ul>
                         </div>
                     </div>
