@@ -14,15 +14,15 @@ public class FixtureCategory {
 
     public void addCategoryToDatabases(){
         Category category = new Category()
-                .setName("Ubrania, które nadają się do ponownego użytku");
+                .setName("ubrania, które nadają się do ponownego użytku");
         Category category2 = new Category()
-                .setName("Ubrania do wyrzucenia");
+                .setName("ubrania do wyrzucenia");
         Category category3 = new Category()
-                .setName("Zabawki");
+                .setName("zabawki");
         Category category4 = new Category()
-                .setName("Książki");
+                .setName("książki");
         Category category5 = new Category()
-                .setName("Inne");
+                .setName("inne");
 
         categoryRepository.save(category);
         categoryRepository.save(category2);

@@ -86,7 +86,6 @@
         <ul class="help--slides-items">
           <li th:each="institution, iter1Stat: ${institutions}" th:if="${iter1Stat.index%2==0}">
             <div class="col" th:each="i: ${#numbers.sequence(0, 1) }" th:if="${iter1Stat.index + i < institutions.size()}">
-              <p th:text="${iter1Stat.count}"></p>
               <div class="title" th:text='|Fundacja “${institutions.get(iter1Stat.index + i).name}“|'></div>
               <div class="subtitle" th:text="|Cel i misja: ${institutions.get(iter1Stat.index + i).description}.|"></div>
             </div>
