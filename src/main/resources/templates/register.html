@@ -14,12 +14,13 @@
 
     <section class="login-page">
       <h2>Załóż konto</h2>
-      <form>
+      <div style="color: red" th:if="${error != null}" >Hasła nie są identyczne!</div>
+      <form method="post" th:object="${user}">
         <div class="form-group">
-          <input type="email" name="email" placeholder="Email" />
+          <input type="email" th:field="*{email}" placeholder="Email" />
         </div>
         <div class="form-group">
-          <input type="password" name="password" placeholder="Hasło" />
+          <input type="password" th:field="*{password}"  placeholder="Hasło" />
         </div>
         <div class="form-group">
           <input type="password" name="password2" placeholder="Powtórz hasło" />

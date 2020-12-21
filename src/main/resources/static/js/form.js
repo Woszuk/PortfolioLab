@@ -33,10 +33,9 @@ document.addEventListener("DOMContentLoaded", function () {
         let address = formSectionColumn[0].querySelectorAll("li");
         let date = formSectionColumn[1].querySelectorAll("li");
 
-        address[0].innerHTML = inputs[0].value;
-        address[1].innerHTML = inputs[1].value;
-        address[2].innerHTML = inputs[2].value;
-        address[3].innerHTML = inputs[3].value;
+        for(let i=0; i<address.length; i++){
+            address[i].innerHTML = inputs[i].value;
+        }
 
         date[0].innerHTML = inputs[4].value;
         date[1].innerHTML = inputs[5].value;

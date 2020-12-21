@@ -10,15 +10,18 @@ import pl.coderslab.charity.repository.InstitutionRepository;
 public class Fixture {
     private FixtureInstitution fixtureInstitution;
     private FixtureCategory fixtureCategory;
+    private FixtureRole fixtureRole;
 
-    public Fixture(FixtureInstitution fixtureInstitution, FixtureCategory fixtureCategory) {
+    public Fixture(FixtureInstitution fixtureInstitution, FixtureCategory fixtureCategory, FixtureRole fixtureRole) {
         this.fixtureInstitution = fixtureInstitution;
         this.fixtureCategory = fixtureCategory;
+        this.fixtureRole = fixtureRole;
     }
 
     @EventListener(ApplicationReadyEvent.class)
     public void databases(){
         fixtureInstitution.addInstitutionToDatabases();
         fixtureCategory.addCategoryToDatabases();
+        fixtureRole.addRole();
     }
 }
