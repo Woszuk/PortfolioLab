@@ -26,8 +26,9 @@ public class RegistrationController {
     @PostMapping("/registration")
     public String registration(@ModelAttribute("user") @Valid User user, BindingResult result, Model model, @RequestParam("password2") String password2){
         if(result.hasErrors() || !user.getPassword().equals(password2)){
-            System.out.println(user.getPassword() + " " + password2);
-            model.addAttribute("error", "error");
+            if(user.getPassword().length() >=8){
+                model.addAttribute("error", "error");
+            }
             return "register";
         }
         userService.saveUser(user);
